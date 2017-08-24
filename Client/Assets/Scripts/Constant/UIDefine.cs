@@ -5,10 +5,10 @@ namespace ZFrame
 {
     public class UIData
     {
-        public string name;
-        public UIData(string name)
+        public Type type;
+        public UIData(Type type)
         {
-            this.name = name;
+            this.type = type;
         }
     }
 
@@ -18,11 +18,11 @@ namespace ZFrame
         Login = 1,
     }
 
-    public static class UI
+    public static class UIDefine
     {
         public static Dictionary<UIType, UIData> UIs = new Dictionary<UIType, UIData>()
         {
-            {UIType.Login, new UIData("UILogin")},
+            {UIType.Login, new UIData(typeof(UILogin))},
         };
     }
 }

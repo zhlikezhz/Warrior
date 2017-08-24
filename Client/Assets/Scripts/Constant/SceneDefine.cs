@@ -5,10 +5,10 @@ namespace ZFrame
 {
     public class SceneData
     {
-        public string name;
-        public SceneData(string name)
+        public Type type;
+        public SceneData(Type type)
         {
-            this.name = name;
+            this.type = type;
         }
     }
     public enum SceneType
@@ -22,8 +22,8 @@ namespace ZFrame
     {
         public static Dictionary<SceneType, SceneData> Scenes = new Dictionary<SceneType, SceneData>() 
         { 
-            {SceneType.Init, new SceneData("SceneInit")},
-            {SceneType.Battle, new SceneData("SceneBattle")},
+            {SceneType.Init, new SceneData(typeof(SceneInit))},
+            {SceneType.Battle, new SceneData(typeof(SceneBattle))},
         };
     }
 }

@@ -1,7 +1,6 @@
-namespace ZFrame
+using ZFrame;
+
+public class SceneBattle : SceneBase
 {
-    public class SceneBattle
-    {
-        
-    }
+    
 }

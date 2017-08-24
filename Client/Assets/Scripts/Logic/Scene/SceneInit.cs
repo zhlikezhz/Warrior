@@ -1,17 +1,16 @@
 using System;
 using UnityEngine;
+using ZFrame;
 
-namespace ZFrame
+public class SceneInit : SceneBase
 {
-    public class SceneInit
+    public override void onStart()
     {
-        public override void onStart()
-        {
-        }
+        AssetManager.Instance.loadScene("initialize");
+        UIBase ui = UIManager.Instance.openUI(UIType.Login);
+    }
 
-        public override void onDestroy()
-        {
-
-        }
+    public override void onDestroy()
+    {
     }
 }
