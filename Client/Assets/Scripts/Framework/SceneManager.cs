@@ -35,7 +35,7 @@ namespace ZFrame
             return null;
         }
 
-        public void openScene(SceneType type)
+        public SceneBase openScene(SceneType type)
         {
             if (getSceneData(type) != null)
             {
@@ -44,7 +44,9 @@ namespace ZFrame
                 _sceneList.Add(scene);
                 scene.onInit(data);
                 scene.onStart();
+                return scene;
             }
+            return null;
         }
 
         public void closeScene(SceneBase scene)
@@ -58,6 +60,18 @@ namespace ZFrame
             {
                 Log.error("scene not exist");
             }
+        }
+
+        public SceneBase getScene(SceneType type)
+        {
+            foreach (SceneBase scene in _sceneList)
+            {
+                if(scene.getType() == type)
+                {
+                    return scene;
+                }
+            }
+            return null;
         }
     }
 }

@@ -1,4 +1,6 @@
 using System;
+using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 namespace ZFrame
@@ -8,8 +10,11 @@ namespace ZFrame
         List<UIBase> _uiList;
         Stack<UIBase> _uiStack;
 
-        public override void onInit()
+        Canvas _root;
+
+        public void onInit(Canvas root)
         {
+            _root = root;
             _uiList = new List<UIBase>();
             _uiStack = new Stack<UIBase>();
         }
@@ -76,7 +81,7 @@ namespace ZFrame
                 UIData data = getUIData(type);
                 foreach(UIBase ui in _uiList)
                 {
-                    if (ui.getType() == data.type)
+                    if (ui.getType() == data.uiType)
                     {
                         return ui;
                     }

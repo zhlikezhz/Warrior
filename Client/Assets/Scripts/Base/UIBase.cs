@@ -4,9 +4,9 @@ namespace ZFrame
     {
         protected UIData _uiData;
 
-        public System.Type getType()
+        public UIType getType()
         {
-            return _uiData.type;
+            return _uiData.uiType;
         }
 
         public virtual void onInit(UIData uiData)

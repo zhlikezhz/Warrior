@@ -6,9 +6,11 @@ namespace ZFrame
     public class UIData
     {
         public Type type;
-        public UIData(Type type)
+        public UIType uiType;
+        public UIData(Type type, UIType uiType)
         {
             this.type = type;
+            this.uiType = uiType;
         }
     }
 
@@ -22,7 +24,7 @@ namespace ZFrame
     {
         public static Dictionary<UIType, UIData> UIs = new Dictionary<UIType, UIData>()
         {
-            {UIType.Login, new UIData(typeof(UILogin))},
+            {UIType.Login, new UIData(typeof(UILogin), UIType.Login)},
         };
     }
 }

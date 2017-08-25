@@ -12,5 +12,6 @@ public class SceneInit : SceneBase
 
     public override void onDestroy()
     {
+
     }
 }
